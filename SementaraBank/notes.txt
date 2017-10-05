@@ -1,0 +1,11 @@
+I, [2017-09-17T09:04:30.153560 #7208]  INFO -- : [096e5b4f-e648-461d-92ac-2ba082052989] Started POST "/top_up/execute" for 10.0.2.2 at 2017-09-17 09:04:30 +0700
+I, [2017-09-17T09:04:30.155056 #7208]  INFO -- : [096e5b4f-e648-461d-92ac-2ba082052989] Processing by TopUpController#execute as */*
+I, [2017-09-17T09:04:30.155641 #7208]  INFO -- : [096e5b4f-e648-461d-92ac-2ba082052989]   Parameters: {"amount"=>"5"}
+D, [2017-09-17T09:04:30.168850 #7208] DEBUG -- : [096e5b4f-e648-461d-92ac-2ba082052989]   Account Load (9.8ms)  SELECT  "accounts".* FROM "accounts" ORDER BY "accounts"."id" ASC LIMIT $1  [["LIMIT", 1]]
+D, [2017-09-17T09:04:30.170360 #7208] DEBUG -- : [096e5b4f-e648-461d-92ac-2ba082052989]    (0.4ms)  BEGIN
+D, [2017-09-17T09:04:30.171894 #7208] DEBUG -- : [096e5b4f-e648-461d-92ac-2ba082052989]   Account Load (0.6ms)  SELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = $1 LIMIT $2  [["id", 1], ["LIMIT", 1]]
+D, [2017-09-17T09:04:30.182777 #7208] DEBUG -- : [096e5b4f-e648-461d-92ac-2ba082052989]   SQL (7.0ms)  UPDATE "accounts" SET "balance" = $1, "updated_at" = $2 WHERE "accounts"."id" = $3  [["balance", 5152], ["updated_at", "2017-09-17 02:04:30.173946"], ["id", 1]]
+D, [2017-09-17T09:04:30.206593 #7208] DEBUG -- : [096e5b4f-e648-461d-92ac-2ba082052989]    (22.4ms)  COMMIT
+I, [2017-09-17T09:04:30.207173 #7208]  INFO -- : [096e5b4f-e648-461d-92ac-2ba082052989]   Rendering top_up/execute.js.erb
+I, [2017-09-17T09:04:30.207425 #7208]  INFO -- : [096e5b4f-e648-461d-92ac-2ba082052989]   Rendered top_up/execute.js.erb (0.1ms)
+I, [2017-09-17T09:04:30.207897 #7208]  INFO -- : [096e5b4f-e648-461d-92ac-2ba082052989] Completed 200 OK in 52ms (Views: 0.8ms | ActiveRecord: 40.1ms)

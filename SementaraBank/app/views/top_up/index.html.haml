@@ -1,0 +1,21 @@
+- tl_no_cache
+
+%h1 SementaraBank
+
+%p
+  %strong Current balance
+  %span.current-balance
+    = "$#{@account.balance}"
+
+%p
+  %label Desired top up payment
+  = text_field_tag :amount, '$5'
+
+%p.top-up-commands
+  %span.command-single
+    = link_to 'Top up 1x', top_up_execute_path, data: { repeat: '1' }, class: 'btn'
+  %span.command-multiple
+    = link_to 'Top up 10x', top_up_execute_path, data: { repeat: '10' }, class: 'btn'
+
+%p.red.hidden
+  Executing top up. Please wait...

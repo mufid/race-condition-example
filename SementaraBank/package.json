@@ -1,0 +1,7 @@
+{
+  "name": "SementaraBank",
+  "private": true,
+  "dependencies": {
+    "primer-core": "^6.3.0"
+  }
+}

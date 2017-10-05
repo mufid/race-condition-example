@@ -1,0 +1,17 @@
+!!!html5
+%html
+  %head
+    %title
+      SementaraBank
+
+    = csrf_meta_tags
+
+    - if @tl_no_cache
+      %meta{name: "turbolinks-cache-control", content: "no-cache"}
+
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+
+  %body
+    .main-content.mx-auto.py-6.p-responsive
+      = yield
